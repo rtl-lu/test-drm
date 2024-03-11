@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Live Player</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../dist/ui.css" />
+</head>
+
+<body>
+    <h1>Live</h1>
+
+    <div class="container">
+
+        <video id="video"></video>
+
+        <div class="row">
+            <div class="col-sm-4">
+
+                Choose a TV channel:
+                <ul class="list-group">
+                    <li class="list-group-item" id="li_channel1" OnClick="render(this, 'channel1')">RTL - clear</li>
+                    <li class="list-group-item" id="li_test" OnClick="render(this, 'test')">Test - DRM</li>
+                </ul>
+
+            </div>
+
+            <div class="col-md-8">
+                <div class="theoplayer-container video-js theoplayer-skin vjs-16-9" id="player"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../dist/main.js?v=%VERSION%"></script>
+    <script>
+
+
+        function render(v, vchannel) {
+            let channel = vchannel;
+
+            let items = document.getElementsByClassName("list-group-item");
+            for (i = 0; i < items.length; i++) {
+                console.log(items[i].id);
+                if (items[i].id == 'li_' + channel) {
+                    items[i].classList.add("active");
+                } else {
+                    items[i].classList.remove("active");
+                }
+            }
+            
+            let channels = {
+                channel1: {
+                    content_id: 'urn:rtl:livestream:channel1',
+                    hls_url: 'https://stream.rtl.lu/data/live/tele/channel1/playlist.m3u8',
+                    hls_type: 'application/x-mpegurl',
+                    dash_url: 'https://stream.rtl.lu/data/live/tele/channel1/index.mpd',
+                    dash_type: 'application/dash+xml'
+                },
+                test: {
+                    content_id: 'urn:rtl:livestream:rtl:test',
+                    hls_url: 'https://stream.rtl.lu/data/live/tele/drm-streamTest/index.m3u8',
+                    hls_type: 'application/x-mpegurl',
+                    dash_url: 'https://stream.rtl.lu/data/live/tele/drm-streamTest/index.mpd',
+                    dash_type: 'application/dash+xml'
+                },
+            }
+
+            // destroy old players
+            players = THEOplayer.players;
+            if (players.length > 0) {
+                oldplayer = THEOplayer.players.getPlayerByUID(THEOplayer.players[0].uid);
+                oldplayer.destroy();
+            }
+
+
+            let sources = {
+                content_id: channels[channel].content_id,
+                drm: true,
+                hls: {
+                    src: channels[channel].hls_url,
+                    type: channels[channel].hls_type
+                },
+                dash: {
+                    src: channels[channel].dash_url,
+                    type: channels[channel].dash_type
+                }
+            };
+
+
+            playerInit(sources);
+
+        }
+
+
+    </script>
+</body>
+
+</html>
