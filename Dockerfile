@@ -1,5 +1,5 @@
 FROM nginx as base
 
 FROM base as prod
-COPY . /var/www
+COPY . /usr/share/nginx
 
