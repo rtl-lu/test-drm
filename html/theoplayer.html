@@ -11,27 +11,11 @@
 </head>
 
 <body>
-    <h1>Live</h1>
-
+    <h1>theoplayer: testDRM</h1>
     <div class="container">
-
-        <video id="video"></video>
-
-        <div class="row">
-            <div class="col-sm-4">
-
-                Choose a TV channel:
-                <ul class="list-group">
-                    <li class="list-group-item" id="li_channel1" OnClick="render(this, 'channel1')">RTL - clear</li>
-                    <li class="list-group-item" id="li_test" OnClick="render(this, 'test')">Test - DRM</li>
-                </ul>
-
-            </div>
-
-            <div class="col-md-8">
-                <div class="theoplayer-container video-js theoplayer-skin vjs-16-9" id="player"></div>
-            </div>
-        </div>
+        <input type="button" value="Load & Play" onClick="render(this, 'test')" />
+        <br />
+        <div class="theoplayer-container video-js theoplayer-skin vjs-16-9" id="player"></div>
     </div>
 
 
@@ -42,16 +26,6 @@
         function render(v, vchannel) {
             let channel = vchannel;
 
-            let items = document.getElementsByClassName("list-group-item");
-            for (i = 0; i < items.length; i++) {
-                console.log(items[i].id);
-                if (items[i].id == 'li_' + channel) {
-                    items[i].classList.add("active");
-                } else {
-                    items[i].classList.remove("active");
-                }
-            }
-            
             let channels = {
                 channel1: {
                     content_id: 'urn:rtl:livestream:channel1',
