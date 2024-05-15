@@ -1,15 +1,5 @@
-# 🚀 Welcome to your new awesome project!
+# Test URLS
 
-This project has been created using **webpack-cli**, you can now run
+https://test-drm.rtl.lu/theoplayer.html
+https://test-drm.rtl.lu/dashjs.html
 
-```
-npm run build
-```
-
-or
-
-```
-yarn build
-```
-
-to bundle your application
