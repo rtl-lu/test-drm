@@ -3,8 +3,8 @@ import WidevineContentProtectionIntegrationFactory from './integration/WidevineC
 
 import * as utils from './utils.js';
 
-import * as THEOplayer from 'theoplayer';
-window.THEOplayer = THEOplayer;
+//import * as THEOplayer from '@theoplayer/extended';
+//window.THEOplayer = THEOplayer;
 
 
 var element = document.querySelector(".theoplayer-container");

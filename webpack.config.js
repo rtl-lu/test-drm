@@ -15,14 +15,12 @@ const config = {
         path: path.resolve(__dirname, 'html/dist'),
     },
     plugins: [
-        new CopyPlugin({
-            patterns: [
-                { from: "node_modules/theoplayer/ui.css", to: "" }
-            ]
-        })
         // Add your plugins here
         // Learn more about plugins from https://webpack.js.org/configuration/plugins/
     ],
+    externals: {
+        theoplayer: 'THEOplayer'
+    },
     module: {
         rules: [
             {

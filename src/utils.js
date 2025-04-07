@@ -1,4 +1,5 @@
 
+// import * as THEOplayer from '@theoplayer/extended';
 
 
 function fromObjectToUint8Array(obj) {

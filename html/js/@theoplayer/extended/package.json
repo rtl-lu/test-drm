@@ -1,0 +1,68 @@
+{
+  "name": "@theoplayer/extended",
+  "main": "THEOplayer.js",
+  "types": "THEOplayer.d.ts",
+  "version": "9.0.0",
+  "description": "THEOplayer is the universal video player solution, enabling you to quickly deliver cross-platform content playback.",
+  "author": "THEO Technologies",
+  "homepage": "https://www.theoplayer.com/",
+  "license": "SEE LICENSE AT https://www.theoplayer.com/terms",
+  "exports": {
+    ".": {
+      "types": "./THEOplayer.d.ts",
+      "import": "./THEOplayer.esm.js",
+      "default": "./THEOplayer.js"
+    },
+    "./chromeless": {
+      "types": "./THEOplayer.chromeless.d.ts",
+      "import": "./THEOplayer.chromeless.esm.js",
+      "default": "./THEOplayer.chromeless.js"
+    },
+    "./THEOplayer": {
+      "types": "./THEOplayer.d.ts",
+      "import": "./THEOplayer.esm.js",
+      "default": "./THEOplayer.js"
+    },
+    "./THEOplayer.js": "./THEOplayer.js",
+    "./THEOplayer.d.ts": "./THEOplayer.d.ts",
+    "./THEOplayer.chromeless": {
+      "types": "./THEOplayer.chromeless.d.ts",
+      "import": "./THEOplayer.chromeless.esm.js",
+      "default": "./THEOplayer.chromeless.js"
+    },
+    "./THEOplayer.chromeless.js": "./THEOplayer.chromeless.js",
+    "./THEOplayer.chromeless.d.ts": "./THEOplayer.chromeless.d.ts",
+    "./THEOplayer.transmux.js": "./THEOplayer.transmux.js",
+    "./THEOplayer.transmux.asmjs.js": "./THEOplayer.transmux.asmjs.js",
+    "./THEOplayer.transmux.wasm": "./THEOplayer.transmux.wasm",
+    "./theoplayer.sw.js": "./theoplayer.sw.js",
+    "./theoplayer.d.js": "./theoplayer.d.js",
+    "./theoplayer.e.js": "./theoplayer.e.js",
+    "./theoplayer.p.js": "./theoplayer.p.js",
+    "./iframe.html": "./iframe.html",
+    "./ui.css": "./ui.css",
+    "./package": "./package.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "THEOplayer.js",
+    "THEOplayer.esm.js",
+    "THEOplayer.chromeless.js",
+    "THEOplayer.chromeless.esm.js",
+    "THEOplayer.common.esm.js",
+    "theoplayer.sw.js",
+    "theoplayer.d.js",
+    "theoplayer.e.js",
+    "theoplayer.p.js",
+    "THEOplayer*.d.ts",
+    "THEOplayer.transmux.js",
+    "THEOplayer.transmux.asmjs.js",
+    "THEOplayer.transmux.wasm",
+    "ui.css",
+    "iframe.html"
+  ],
+  "keywords": [
+    "HTML5 video player",
+    "THEOplayer"
+  ]
+}
